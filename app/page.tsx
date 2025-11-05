@@ -1,13 +1,11 @@
-import React from "react";
+import Hero from "@/components/hero";
 
 export default function Home() {
     return (
-	<section className="py-24">
-	    <div className="container">
-		<h1 className="text-3xl font-bold">
-		    Portfolio
-		</h1>
+	<main className="flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+	    <div className="max-w-7xl w-full">
+		<Hero />
 	    </div>
-	</section>
+	</main>
     )
 }
