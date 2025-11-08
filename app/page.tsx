@@ -2,6 +2,7 @@ import Hero from "@/components/hero";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import Grid from "@/components/grid";
 import { navItems } from "@/data";
+import RecentProjects from "@/components/recent-projects";
 
 export default function Home() {
     return (
@@ -16,6 +17,7 @@ export default function Home() {
 		{/* components that need x padding */}
 		<div className="sm:px-10 px-5">
 		    <Grid />
+		    <RecentProjects />
 		</div>
 	    </div>
 	</main>
