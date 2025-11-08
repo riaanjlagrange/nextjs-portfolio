@@ -19,7 +19,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "mx-auto grid grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-5 lg:grid-cols-5",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
         className,
       )}
     >
@@ -87,7 +87,7 @@ export const BentoGridItem = ({
 	 </div>
 	 {id === 6 && (
 	    <BackgroundGradientAnimation>
-		<div className="absolute z-50 flex items-center justify-center text-white font-bold" />
+		{/* <div className="absolute z-50 flex items-center justify-center text-white font-bold" /> */}
 	    </BackgroundGradientAnimation>
 	 )}
 	
