@@ -1,6 +1,7 @@
 "use client";
 
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 export function ProjectCard({
   title,
@@ -12,12 +13,12 @@ export function ProjectCard({
   title: string;
   des: string;
   img: string;
-  iconLists?: string[];
+  iconLists: string[];
   link: string;
 }) {
   return (
     <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-auto sm:w-[30rem] h-auto rounded-xl p-5 border  ">
         <CardItem
           translateZ="10"
           className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -43,8 +44,16 @@ export function ProjectCard({
             alt="thumbnail"
           />
         </CardItem>
-        <div className="flex justify-center items-center mt-20">
-	  <a href={link}>
+        <div className="flex justify-between items-center mt-20">
+	  <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
+	    {iconLists.map((icon, index) => (
+	      <Avatar key={index}>
+		<AvatarImage src={icon} alt="icon" />
+		<AvatarFallback>CN</AvatarFallback>
+	      </Avatar>
+	    ))}
+	  </div>
+	  <a href={link} target="_blank">
 	      <CardItem
 		translateZ={5}
 		translateX={5}
