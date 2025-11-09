@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "Sentry": {
+      "url": "https://mcp.sentry.dev/mcp/riaan-la-grange/javascript-nextjs",
+      "type": "http"
+    }
+  }
+}
