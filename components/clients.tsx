@@ -1,9 +1,9 @@
-import { companies, testimonials } from "@/data"
+import { testimonials } from "@/data"
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards"
 
 const Clients = () => {
   return (
-    <section id="projects" className="py-20">
+    <section id="testimonials" className="py-20">
 	<h1 className="heading">
 	    Kind words from {' '}
 	    <span className="text-purple-300">satisfied clients</span>
