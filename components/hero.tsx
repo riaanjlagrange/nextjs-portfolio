@@ -2,7 +2,7 @@ import { Spotlight } from "./ui/spotlight";
 import { cn } from "@/lib/utils";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import MagicButton from "./ui/magic-button";
-import { FaLocationArrow } from "react-icons/fa";
+import { FaLocationArrow, FaMobile } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -39,25 +39,36 @@ const Hero = () => {
       {/* Hero Content (this is now centered) */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl lg:max-w-4xl px-6">
         <h2 className="uppercase tracking-widest text-xs text-blue-100">
-          Create seamless solutions
+          My Portfolio
         </h2>
 
         <TextGenerateEffect
           className="text-[40px] md:text-4xl lg:text-5xl font-semibold leading-tight"
-          words="Full Stack Mobile & Web Developer"
+          words="Full Stack Software Developer"
         />
 
         <p className="md:tracking-wider mt-4 mb-6 text-sm md:text-lg lg:text-2xl">
           Hi, I&apos;m Riaan, a Full Stack Developer based in Cape Town, South Africa.
         </p>
 
-        <a href="#">
-          <MagicButton
-            title="Show my work"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
+	<div className="flex gap-5 items-center justify-center">
+	  <a href="#projects">
+	    <MagicButton
+	      title="Show my work"
+	      icon={<FaLocationArrow />}
+	      position="right"
+	    />
+	  </a>
+	  <a href="#contact">
+	    <MagicButton
+	      title="Contact Me"
+	      icon={<FaMobile />}
+	      position="right"
+	    />
+	  </a>
+	</div>
+	{/* TODO: add cv to download */}
+	<p className="mt-5">or <a href="" className="font-bold text-purple-300 hover:text-white transition-colors">Download My CV</a></p>
       </div>
     </section>
   );
