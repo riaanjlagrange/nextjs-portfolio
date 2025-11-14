@@ -14,6 +14,7 @@ const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
 >(undefined);
 
+
 export const CardContainer = ({
   children,
   className,
@@ -95,6 +96,18 @@ export const CardBody = ({
   );
 };
 
+interface CardItemProps {
+  as?: React.ElementType;
+  children?: React.ReactNode; // <-- IMPORTANT
+  className?: string;
+  translateX?: number | string;
+  translateY?: number | string;
+  translateZ?: number | string;
+  rotateX?: number | string;
+  rotateY?: number | string;
+  rotateZ?: number | string;
+}
+
 export const CardItem = ({
   as: Tag = "div",
   children,
@@ -106,24 +119,10 @@ export const CardItem = ({
   rotateY = 0,
   rotateZ = 0,
   ...rest
-}: {
-  as?: React.ElementType;
-  children: React.ReactNode;
-  className?: string;
-  translateX?: number | string;
-  translateY?: number | string;
-  translateZ?: number | string;
-  rotateX?: number | string;
-  rotateY?: number | string;
-  rotateZ?: number | string;
-  [key: string]: any;
-}) => {
+}: CardItemProps) => {
+
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
-
-  useEffect(() => {
-    handleAnimations();
-  }, [isMouseEntered]);
 
   const handleAnimations = () => {
     if (!ref.current) return;
@@ -133,6 +132,10 @@ export const CardItem = ({
       ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
     }
   };
+
+  useEffect(() => {
+    handleAnimations();
+  }, [isMouseEntered]);
 
   return (
     <Tag
@@ -144,6 +147,7 @@ export const CardItem = ({
     </Tag>
   );
 };
+
 
 // Create a hook to use the context
 export const useMouseEnter = () => {
