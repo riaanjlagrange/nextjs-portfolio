@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ThemeChanger from '@/components/ThemeChanger'
+import { ModeToggle } from "./theme-changer";
 
 const Header = () => {
     return (
@@ -24,7 +24,7 @@ const Header = () => {
 		</ul>
 
 		<div>
-		    <ThemeChanger />
+		    <ModeToggle />
 		</div>
 	    </nav>
 	</header>
